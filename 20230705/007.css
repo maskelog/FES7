@@ -27,7 +27,7 @@
     border: 2px solid red;
 }
 
-.my + p,
+/* .my + p, */
 .sect3 p{
     background-color: rgba(166, 235, 29, 0.918);
 }
