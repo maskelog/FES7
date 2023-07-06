@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>구조적 가상 선택자</title>
+    <style>
+      /* ol:first-child {
+        color: salmon;
+      } */
+
+      li:nth-child(even) {
+        color: royalblue;
+      }
+
+      li:first-child {
+        color: red;
+      }
+      div :only-of-type {
+        background-color: skyblue;
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      <p>안녕하세요</p>
+      <p>안녕하세요</p>
+      <p>안녕하세요</p>
+      <p>안녕하세요</p>
+      <strong>안녕하세요</strong>
+      <strong>안녕하세요</strong>
+      <strong>안녕하세요</strong>
+      <p>안녕하세요</p>
+      <a href="#">a 태그</a>
+      <a href="#">a 태그</a>
+      <a href="#">a 태그</a>
+    </div>
+    <ol class="ol-style">
+      <!-- li{리스트}*10 -->
+      <li>리스트</li>
+      <ol>
+        <li>ol li</li>
+        <li>ol li</li>
+      </ol>
+      <li>리스트</li>
+      <li>리스트</li>
+      <li>리스트</li>
+      <li>리스트</li>
+      <li>리스트</li>
+      <li>리스트</li>
+      <li>리스트</li>
+      <li>리스트</li>
+      <li>리스트</li>
+    </ol>
+  </body>
+</html>

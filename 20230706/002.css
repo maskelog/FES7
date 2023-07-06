@@ -1,0 +1,30 @@
+/* font-face 상대경로로 폰트 연결 */ 
+@font-face {
+    font-family:'Pretendard-Regular'; 
+    src:
+    url('./font/Pretendard-Regular.woff')format('woff'); 
+    font-weight: 400;
+    font-style: normal; 
+} 
+body { 
+    font-family: Pretendard-Regular,'Times New Roman', Dotum, '돋움', sans-serif; 
+}
+
+.parents {
+    width: 200px;
+    height: 200px;
+    background-color: aqua;
+    font-size: 20px;
+}
+
+.child {
+    width: 50vw;
+    height: 50vh;
+    font-size: 2em;
+    background-color:  salmon;
+}
+
+p{
+    font-size: 3rem;
+    /* 16px * 4 = 64px */
+}

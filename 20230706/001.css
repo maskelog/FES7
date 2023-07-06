@@ -1,0 +1,39 @@
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@200&display=swap');
+</style>
+
+@font-face {
+    font-family: 'KyoboHandwriting2022khn';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2304-2@1.0/KyoboHandwriting2022khn.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'HANAMDAUM';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2304-2@1.0/HANAMDAUM.woff2') format('woff2');
+    font-weight: 400;
+    font-style: normal;
+}
+
+body{
+	font-family: "Noto Sans KR", sans-serif;
+}
+
+body {
+    color: red;
+}
+h1 {
+    color: rgb(7, 114, 78);
+}
+strong{
+    border: 5px solid currentColor;
+}
+h2 {
+    color: #9999;
+    font-family: 'Noto Serif KR', cursive, sans-serif;
+}
+
+.HANAMDAUM {
+    font-family: 'HANAMDAUM' cursive, sans-serif;
+}
