@@ -5,8 +5,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title></title>
+    <link rel="stylesheet" href="./main.js">
     <style>
-        img {border: none;} 
+        #more {display: none;}
+        img {
+            border-radius:8px 8px 0 0;
+        }
         .Post-Card {
         width: 288px;
         height: 348px;
@@ -44,8 +48,7 @@
         font-style: normal;
         font-weight: 700;
         line-height: normal;
-        }
-        .title-font {
+        margin-left: 16px;
         display: flex;
         width: 200px;
         height: 19px;
@@ -57,9 +60,9 @@
         width: 256px;
         height: 40px;
         flex-direction: column;
-        flex-shrink: 0;     
-        }
-        .main-font {
+        flex-shrink: 0;
+        margin-left: 16px;
+        overflow: hidden;
         color: var(--text-2, #5A6A72);
         font-family: Pretendard;
         font-size: 12px;
@@ -67,7 +70,10 @@
         font-weight: 400;
         line-height: 20px;
         }
-        button {
+        .read {
+        margin-left: 16px;
+        box-sizing: border-box;
+        padding: 0;
         width: 70px;
         height: 24px;
         flex-shrink: 0;
@@ -90,8 +96,26 @@
     <div class="box1">
     <a href="#"><img src="img/unsplash_lB9ylP8e9Sg.png" style="border:0;"></a>
     <p class="title title-font">그것을 피가 청춘을 것이다</p>
-    <p class="main main-font">청춘의 하였으며, 이것은 몸이 때문이다. 사는가 고동을 용기가 충분히 청춘 것이다. 얼마나 반짝이는 소담스...운 열락의 아름다우냐? 가지에 같지 청춘의 옷을 목숨을 피어나기 오직 군영과 칼이다. 거친 끓는 예가 뿐이다. 방지하는 꽃이 청춘을 생명을 이것이다. 인간의 거선의 피고, 모래뿐일 작고 우리 평화스러운 있는가?</p>
+    <p class="main main-font">청춘의 하였으며, 이것은 몸이 때문이다. 사는가 고동을 용기가 충분히 청춘 것이다. 얼마나 반짝이는 소담스<span id="dots">...</span><span id="more">운 열락의 아름다우냐? 가지에 같지 청춘의 옷을 목숨을 피어나기 오직 군영과 칼이다. 거친 끓는 예가 뿐이다. 방지하는 꽃이 청춘을 생명을 이것이다. 인간의 거선의 피고, 모래뿐일 작고 우리 평화스러운 있는가?</span></p>
+    <!-- <button class="read">Read</button> -->
+    <button class="read" onclick="myFunction()" id="myBtn">Read</button>
     </div>
-    <button>Read</button>
+    <script>
+    function myFunction() {
+      var dots = document.getElementById("dots");
+      var moreText = document.getElementById("more");
+      var btnText = document.getElementById("myBtn");
+
+      if (dots.style.display === "none") {
+        dots.style.display = "inline";
+        btnText.innerHTML = "Read more"; 
+        moreText.style.display = "none";
+      } else {
+        dots.style.display = "none";
+        btnText.innerHTML = "Read less"; 
+        moreText.style.display = "inline";
+      }
+    }
+    </script>
 </body>
 </html>
