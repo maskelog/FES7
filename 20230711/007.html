@@ -33,26 +33,29 @@
     .yellow {
       background: gold;
     }
-    
+
     .wrap>div {
       height: 300px;
     }
-    .wrap, 
 
-    .wrap > div {
-      display:flex;
-      justify-content:space-between;
+    /* flex */
+    .wrap {
+      display: flex;
+      justify-content: space-between;
     }
 
-    .left-side, 
-    .center{
-      flex-direction:column;
+    .left-side,
+    .center {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
     }
 
     .right-side {
+      display: flex;
       flex-direction: column-reverse;
+      justify-content: space-between;
     }
-
   </style>
 </head>
 
