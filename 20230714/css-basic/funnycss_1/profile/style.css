@@ -1,0 +1,107 @@
+/* 브라우저야 뭐하냐 자동으로 좀 해주라 부탁~
+=> font-size: unset;
+어 이거 상속되는 애네? inherit
+=> margin: unset;
+어 얘는 상속 안되는데? initial*/
+
+body,
+h1,
+h2,
+p,
+ul {
+    margin: unset;
+    padding: unset;
+}
+
+li {
+    list-style-type: none;
+}
+
+h1 {
+    font-size: 80px;
+    /* font-size: inherit; */
+}
+
+h1,
+p {
+    margin: initial;
+}
+
+
+
+body {
+    background-image: url(images/background.gif);
+}
+
+.wrapper {
+    background-color: #ddd;
+    width: 880px;
+    height: auto;
+    margin: 100px auto;
+}
+
+.header {
+    background-image: url(images/background02.png);
+    background-size: cover;
+    background-position: center;
+    padding: 100px 0;
+    color: #eee;
+}
+
+.header img {
+    display: block;
+    margin: 0 auto;
+    border-radius: 200px/100px;
+    width: 140px;
+
+    border: 5px solid;
+}
+
+.header h1 {
+    /* background-color: orange; */
+    text-align: center;
+    margin: 0 auto;
+    width: fit-content;
+}
+
+.header p {
+    border-top: 4px solid white;
+    color: white;
+    /* background-color: goldenrod; */
+    width: fit-content;
+    padding: 10px 20px;
+    margin: 0 auto;
+}
+
+.section {
+    background-color: white;
+    margin: 20px;
+    padding: 20px;
+    background-image: url(images/icon-information.png);
+    background-repeat: no-repeat;
+    background-position: right 30px center;
+}
+
+.skill {
+    background-image: url(./images/icon-skills.png);
+}
+
+.section h2 {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: salmon;
+}
+
+.list li {
+    border-left: 5px solid red;
+    padding-left: 5px;
+
+}
+
+.footer {
+    text-align: center;
+    padding: 10px 0;
+    background-color: #f4f4f4f4;
+
+}

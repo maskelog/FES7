@@ -1,11 +1,53 @@
-/* tag = type selector */
-div {
-    background-color: orchid;
-    /* display: inline; */
-/* 직계부모가 제공하는 컨텐츠 영역 크기 == containing block*/
-width: 400px;
-/* 직계부모가 제공하는 컨텐츠 영역 크기 == containing block width*/
-margin: 0 auto;
-/* 초기값은 auto lnitial value */
-/* padding: 40px; */
+body,
+h1,
+h2 {
+    margin: unset;
+    padding: unset;
+}
+
+body {
+    background-image: url(images/bg.png);
+}
+
+.wrapper {
+    /* background-color: #ddd; */
+    width: 300px;
+    height: auto;
+    margin: 100px auto;
+}
+
+.header {
+    color: #eee;
+}
+
+.header img {
+    display: block;
+    margin: 0 auto;
+}
+
+h1 {
+    padding-bottom: 5px;
+    color: #FFF;
+    font-family: Arial;
+    font-size: 36px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+
+}
+
+.Contents {
+    text-align: left;
+    margin: 0 auto;
+    width: fit-content;
+    padding: 20px;
+    border-radius: 0px 0px 30px 30px;
+    border-bottom: 10px solid #46260E;
+    background: #9C6035;
+    color: #E8BC9C;
+    font-family: Arial;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
 }
