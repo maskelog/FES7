@@ -1,0 +1,11 @@
+/* tag = type selector */
+div {
+    background-color: orchid;
+    /* display: inline; */
+/* 직계부모가 제공하는 컨텐츠 영역 크기 == containing block*/
+width: 400px;
+/* 직계부모가 제공하는 컨텐츠 영역 크기 == containing block width*/
+margin: 0 auto;
+/* 초기값은 auto lnitial value */
+/* padding: 40px; */
+}
