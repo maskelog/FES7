@@ -7,37 +7,44 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>table</title>
     <style>
-        table, th, td {
+        table,
+        th,
+        td {
             border: 2px solid black;
             border-collapse: collapse;
+            text-align: center;
+            margin: 0 auto;
+            width: fit-content;
+
         }
+
         table {
             border: 3px solid black;
             width: 100%;
         }
+
         caption {
             caption-side: bottom;
         }
-        th, thead {
-            background-color: #efefef;           
+
+        th,
+        thead {
+            background-color: #efefef;
         }
+
         caption {
             margin-top: 2%;
             font: bolder;
+        }
+        tfoot th, tfoot td {
+            font-weight: bold;
         }
     </style>
 </head>
 
 <body>
-    <!-- <h2>테이블의 제목</h2> -->
     <table>
-        <caption>2023 학년도 대학수능능력시험  성적통지표</caption>
-        <colgroup>
-            <col>
-            <col span="2" class="col1">
-            <col style="width:20%" span="2" class="col2">
-            <col class="col3">
-        </colgroup>
+        <caption>2023 학년도 대학수능능력시험 성적통지표</caption>
         <thead>
             <tr>
                 <th>구분</th>
@@ -46,7 +53,7 @@
                 <th scope="col">수학 영역</th>
                 <th rowspan="2">영어 영역</th>
                 <th colspan="2">탐구영역</th>
-                <th>제 2 외국어/<br>한문 영역</br></th>
+                <th>제 2 외국어/<br>한문 영역</th>
             </tr>
             <tr>
                 <th>선택과목</th>
@@ -88,10 +95,7 @@
                 <td>2</td>
             </tr>
         </tfoot>
-
     </table>
-
-
 </body>
 
 </html>
