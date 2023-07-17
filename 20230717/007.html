@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>grid leyout</title>
+    <style>
+        .item1 {
+            grid-area: header;
+            background-color: #96c9f2;
+        }
+
+        .item2 {
+            grid-area: section;
+            background-color: #485373;
+        }
+
+        .item3 {
+            grid-area: aside;
+            background-color: #c7f544;
+        }
+
+        .item4 {
+            grid-area: footer;
+            background-color: #ff7769;
+        }
+
+        .grid-container {
+            display: grid;
+            grid-template-areas:
+                ' header header header header header'
+                ' section section section section aside'
+                ' footer footer footer footer footer';
+            color: white;
+            gap: 10px;
+            background-color: #466fa6;
+            padding: 10px;
+        }
+
+        .grid-container>div {
+            text-align: center;
+            padding: 20px 0;
+            font-size: 30px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Grid Layout</h1>
+    <div class="grid-container">
+        <div class="item1">Header</div>
+        <div class="item2">section</div>
+        <div class="item3">aside</div>
+        <div class="item4">Footer</div>
+    </div>
+
+</body>
+
+</html>
