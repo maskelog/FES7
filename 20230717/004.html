@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title></title>
+  <style>
+    .container {
+      display: grid;
+      width: 600px;
+      gap: 10px;
+      background: #ddd;
+      margin-bottom: 10px;
+      border: 10px solid #aaa;
+
+    }
+
+    .container div {
+      background: skyblue;
+      height: 100px;
+      border: 10px solid royalblue;
+      box-sizing: border-box;
+    }
+
+    /* 반응형 UI사용할때 사용함 */
+    /* autofill 가능한 많은 셀들을 만들어 낼려고 합니다. 빈공간이 생겨요 */
+    .autofill {
+      grid-template-columns: repeat(auto-fill, minmax(100px, auto));
+    }
+    /* autofit 그리드 컨테이너 내부에 공간이 남을 경우, 그 공간을 각 셀들이 나눠 갖습니다.  */
+    .autofit {
+      grid-template-columns: repeat(auto-fit, minmax(100px, auto));
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container autofill">
+    <div>
+      item
+    </div>
+    <div>
+      item
+    </div>
+    <div>
+      item
+    </div>
+    <div>
+      item
+    </div>
+  </div>
+
+  <div class="container autofit">
+    <div>
+      item
+    </div>
+    <div>
+      item
+    </div>
+    <div>
+      item
+    </div>
+    <div>
+      item
+    </div>
+  </div>
+
+</body>
+
+</html>
