@@ -1,0 +1,134 @@
+/* reset */
+
+.a11y-hidden {
+    clip: rect(1px, 1px, 1px, 1px);
+    clip-path: inset(50%);
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+}
+
+body,
+h1,
+h2,
+p,
+ul,
+button {
+    padding: 0;
+    margin: 0;
+    padding: 0;
+    font: inherit;
+}
+
+/* h1 */
+h1 {
+    text-align: center;
+}
+
+h1 img {
+    width: 386px;
+    max-width: calc(100% - (97px * 2));
+
+}
+
+button {
+    border: 0;
+    background: none;
+    font: inherit;
+    color: inherit;
+}
+
+section {
+    background: #EAE8FE;
+    ;
+}
+
+/* header */
+.header {
+    background-color: #fff;
+}
+
+.header .max-width {
+    height: 120px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header h1 {
+    width: 156px;
+}
+
+ol,
+li {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.sestion1 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.sestion1 {
+    padding: 31px 27px 28px;
+}
+
+/* 음료 리스트 */
+.drink-list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+}
+
+.btn-cola {
+    box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+    padding: 11px 12px 9px;
+    position: relative;
+    width: 100%;
+}
+
+.btn-cola.active {
+    box-shadow: 0 0 0 3px #6327fe;
+}
+
+.cola-img,
+.cola-name,
+.cola-price {
+    display: block;
+}
+
+.cola-img {
+    width: 36px;
+    margin: auto;
+}
+
+.cola-name {
+    font-size: 9px;
+    margin: 6px 0;
+}
+
+.cola-price {
+    font-size: 12px;
+    font-weight: 500;
+    background: #6327fe;
+    color: #fff;
+    padding: 2px 0;
+    border-radius: 20px;
+}
+
+.drink-select {
+    display: grid;
+    grid-template-areas: 
+    "a a"
+    "a a"
+    "a a";
+    gap: 12px;
+
+}
