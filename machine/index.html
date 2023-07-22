@@ -67,8 +67,10 @@
                 <div>잔액</div>
                 <div>1000원</div>
                 <button type="submit">거스름돈 반환</button>
-                <button type="submit">입금</button>
-                <button type="submit">획득</button>
+                <label for="input-money" class="ally-hidden">금액</label>
+                <input id="input-money" min="1000" step="1000" type="number" placeholder="입금액 입력" data-siid="si_input_0">
+                <button class="btn" type="button">입금</button>
+                <button type="btn-get" class="button">획득</button>
             </div>
         </section>
         <section class="계산">

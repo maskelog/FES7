@@ -1,4 +1,13 @@
 /* reset */
+body,
+h1,
+h2,
+p,
+ul,
+button {
+    padding: 0;
+    margin: 0;
+}
 
 .a11y-hidden {
     clip: rect(1px, 1px, 1px, 1px);
@@ -11,27 +20,9 @@
     position: absolute;
 }
 
-body,
-h1,
-h2,
-p,
 ul,
-button {
-    padding: 0;
-    margin: 0;
-    padding: 0;
-    font: inherit;
-}
-
-/* h1 */
-h1 {
-    text-align: center;
-}
-
-h1 img {
-    width: 386px;
-    max-width: calc(100% - (97px * 2));
-
+li {
+    list-style: none;
 }
 
 button {
@@ -41,45 +32,23 @@ button {
     color: inherit;
 }
 
-section {
-    background: #EAE8FE;
-    ;
+main {
+    width: 748px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 50px auto;
+    grid-template-areas:
+        "section1 section2"
+        "section1 section3";
+    gap: 20px 28px;
 }
 
-/* header */
-.header {
-    background-color: #fff;
-}
-
-.header .max-width {
-    height: 120px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.header h1 {
-    width: 156px;
-}
-
-ol,
-li {
-    margin: 0;
-    padding: 0;
-    list-style: none;
-}
-
-.sestion1 {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.sestion1 {
+.section1 {
+    grid-area: section1;
     padding: 31px 27px 28px;
 }
 
-/* 음료 리스트 */
 .drink-list {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -94,10 +63,6 @@ li {
     width: 100%;
 }
 
-.btn-cola.active {
-    box-shadow: 0 0 0 3px #6327fe;
-}
-
 .cola-img,
 .cola-name,
 .cola-price {
@@ -110,8 +75,14 @@ li {
 }
 
 .cola-name {
-    font-size: 9px;
     margin: 6px 0;
+    color: var(--gray-1, #333);
+    text-align: center;
+    font-family: Noto Sans KR;
+    font-size: 9px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
 }
 
 .cola-price {
@@ -121,4 +92,12 @@ li {
     color: #fff;
     padding: 2px 0;
     border-radius: 20px;
+}
+
+.drink-select {
+    display: grid;
+    grid-template-columns: auto calc((100% - 24px) / 3);
+    grid-template-rows: 32px 32px 106px;
+    gap: 12px;
+    margin-top: 20px;
 }
