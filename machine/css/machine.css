@@ -32,6 +32,8 @@ button {
     color: inherit;
 }
 
+h1 { text-align: center;}
+
 main {
     width: 748px;
     margin: auto;
