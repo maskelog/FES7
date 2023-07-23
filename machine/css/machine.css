@@ -32,7 +32,9 @@ button {
     color: inherit;
 }
 
-h1 { text-align: center;}
+h1 {
+    text-align: center;
+}
 
 main {
     width: 748px;
@@ -46,8 +48,22 @@ main {
     gap: 20px 28px;
 }
 
+body {
+    background-color: #eae8fe;
+}
+
 .section1 {
     grid-area: section1;
+    padding: 31px 27px 28px;
+}
+
+.section2 {
+    grid-area: section2;
+    padding: 31px 27px 28px;
+}
+
+.section3 {
+    grid-area: section3;
     padding: 31px 27px 28px;
 }
 
@@ -102,4 +118,103 @@ main {
     grid-template-rows: 32px 32px 106px;
     gap: 12px;
     margin-top: 20px;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: auto calc((100% - 24px) / 3);
+    grid-template-rows: 32px 32px 106px;
+    gap: 12px;
+    margin-top: 20px;
+}
+
+.bg-box {
+    background: #eae8fe;
+    border-radius: 5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 6px 10px;
+}
+
+.bg-box .title,
+.bg-box p {
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.bg-box .title::after {
+    content: " :";
+}
+
+.btn,
+.btn-get {
+    box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.5);
+    border-radius: 5px;
+    font-size: 13px;
+}
+
+.btn-get {
+    background: #6327fe;
+    color: #fff;
+}
+
+.get-cola {
+    background: #eae8fe;
+    border-radius: 5px;
+    border: 1px solid #bdbdbd;
+    overflow-y: auto;
+    padding: 12px;
+}
+
+.get-cola li {
+    background: #fff;
+    border-radius: 5px;
+    padding: 8px;
+    font-size: 9px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.get-cola li:first-child~li {
+    margin-top: 6px;
+}
+
+.get-cola li img {
+    width: 18px;
+}
+
+.get-cola li strong {
+    font-size: 14px;
+    border: 1px solid #bdbdbd;
+    border-radius: 5px;
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+    margin-left: auto;
+}
+
+.get-title {
+    font-size: 14px;
+    text-align: center;
+    margin-bottom: 13px;
+}
+
+.total-price {
+    font-size: 12px;
+    text-align: right;
+    margin-top: 6px;
+}
+
+.section3 .get-cola {
+    flex-grow: 1;
+}
+
+.section3 {
+    grid-area: section3;
+    padding: 25px 27px 26px;
+    display: flex;
+    flex-direction: column;
 }
