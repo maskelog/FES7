@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>커스텀 input,select 박스</title>
+    <style>
+        .txt-hide {
+            overflow: hidden;
+            width: 1px;
+            height: 1px;
+            clip-path: inset(50%);
+        }
+        /* 체크박스 틀로 가상요소 before 사용 */
+        .labl-hold::before {
+            display: inline-block;
+            content: '';
+            width: 22px;
+            height: 22px;
+            margin-right: 10px;
+            border: 1px solid black;
+            vertical-align: -5px;
+        }
+
+        .inp-hlod:focus-visible+.labl-hold::before {
+            outline: 2px solid teal;
+            outline-offset: 3px;
+        }
+
+        /* 체크마크 위치를 잡기위해 사용 */
+        .labl-hold {
+            position: relative;
+        }
+
+        /* 체크박스 커스텀을 가상요소 after를 사용 */
+        .labl-hold::after {
+            content: '';
+            position: absolute;
+            top: -3px;
+            left: 20px;
+
+            width: 22px;
+            height: 22px;
+            /* background-image: url(img/checkmark.png);
+            background-size: 22px;
+            background-repeat: no-repeat; */
+            background: url(img/checkmark.png) 0 0/22px no-repeat;
+            opacity: 0;
+            transition: all 0.3s ease;
+            
+        }
+
+        /* +는 인접 형제 */
+        /* 클레스 선택자 checked  */
+        .inp-hold:checked+.labl-hold::after{
+            /* top: -3px; */
+            left: 0;
+            opacity: 1;
+        }
+    </style>
+</head>
+<body>
+    <input type="checkbox" id="inp-hold" class="inp-hold txt-hide">
+    <label for="inp-hold" class="labl-hold">로그인 상태 유지</label>
+</body> 
+</html>
