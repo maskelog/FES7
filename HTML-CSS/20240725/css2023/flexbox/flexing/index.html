@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Flexing</title>
+        <style>
+            body {
+                background-color: brown;
+            }
+            .playground {
+                border: 10px solid maroon;
+                width: 980px;
+                margin: 0 auto;
+                border-radius: 20px;
+                background-color: skyblue;
+                display: flex;
+                /* 넘치면 줄바꿈하겠다 자식의 flex-basis 보장 */
+                /* flex-wrap: wrap; */
+                /* justify-content: center; */
+            }
+            .frog {
+                background-color: mediumseagreen;
+                color: lime;
+                font-size: 40px;
+                margin: 10px;
+                border: 6px solid green;
+                border-radius: 10px;
+                /* width: 200px;
+                margin-left: auto;
+                margin-right: auto; */
+                /* flex-grow: 1; */
+                
+                /* min-width: 0; */
+                flex-basis: 200px;
+            }
+            
+        </style>
+    </head>
+    <body>
+
+        <div class="playground">
+            <div class="frog"><img src="images/frog.png" alt=""></div>
+            <div class="frog"><img src="images/frog.png" alt=""></div>
+            <div class="frog"><img src="images/frog.png" alt=""></div>
+        </div>
+
+    </body>
+</html>
