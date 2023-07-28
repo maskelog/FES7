@@ -4,35 +4,40 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title></title>
+    <title>로또 번호 생성기</title>
     <link rel="stylesheet" href="lotto.css">
 </head>
 <body>
     <h1>로또 번호 추첨기</h1>
+    <div id="mainContent">
+        <div id="lottoNumbers"></div>
+        <button id="refreshButton">🔀</button>
+    </div>
     <script>
+        window.onload = generateLottoNumbers;
+document.getElementById('refreshButton').addEventListener('click', generateLottoNumbers);
+
+function generateLottoNumbers() {
     var lotto = [];
-    // 같은 번호가 나오면 출력되는 번호가 6개가 아닌 경우가 있음
-    // for (var i = 0; i < 6; i++) {
-    //     var num = parseInt(Math.random() * 45 + 1);
-    //     if (lotto.indexOf(num) == -1) {
-    //         lotto.push(num);
-    //     }
-    // }
-    
     while (lotto.length < 6) {
-        var num = parseInt(Math.random()*45+1);
+        var num = parseInt(Math.random() * 45 + 1);
         if (lotto.indexOf(num) == -1) {
             lotto.push(num);
         }
     }
-    // sort 정렬을 사용하여
-    lotto.sort((a,b)=>a-b);
-        document.write("<div class='ball ball1'>" + lotto[0] + "</div>");
-        document.write("<div class='ball ball2'>" + lotto[1] + "</div>");
-        document.write("<div class='ball ball3'>" + lotto[2] + "</div>");
-        document.write("<div class='ball ball4'>" + lotto[3] + "</div>");
-        document.write("<div class='ball ball5'>" + lotto[4] + "</div>");
-        document.write("<div class='ball ball6'>" + lotto[5] + "</div>");
+    lotto.sort((a, b) => a - b);
+
+    var lottoNumbersDiv = document.getElementById('lottoNumbers');
+    lottoNumbersDiv.innerHTML = ''; // 이전의 로또 번호들을 지우고 새로운 번호들을 생성합니다.
+
+    for (var i = 0; i < 6; i++) {
+        var ball = document.createElement('div');
+        ball.className = 'ball ball' + (i + 1);
+        ball.textContent = lotto[i];
+        lottoNumbersDiv.appendChild(ball);
+    }
+}
+
     </script>
 </body>
 </html>
