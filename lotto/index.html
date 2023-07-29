@@ -13,31 +13,37 @@
         <div id="lottoNumbers"></div>
         <button id="refreshButton">🔀</button>
     </div>
+    <article class="kakao_ad">
+        <ins class="kakao_ad_area" style="display:none;"
+            data-ad-unit = "DAN-AlUhF8XAOdjBWh5Z"
+            data-ad-width = "250"
+            data-ad-height = "250"></ins>
+        <script type="text/javascript" src="//t1.daumcdn.net/kas/static/ba.min.js" async></script>
+    </article>
     <script>
         window.onload = generateLottoNumbers;
-document.getElementById('refreshButton').addEventListener('click', generateLottoNumbers);
+        document.getElementById('refreshButton').addEventListener('click', generateLottoNumbers);
 
-function generateLottoNumbers() {
-    var lotto = [];
-    while (lotto.length < 6) {
-        var num = parseInt(Math.random() * 45 + 1);
-        if (lotto.indexOf(num) == -1) {
-            lotto.push(num);
+        function generateLottoNumbers() {
+            var lotto = [];
+            while (lotto.length < 6) {
+                var num = parseInt(Math.random() * 45 + 1);
+                if (lotto.indexOf(num) == -1) {
+                    lotto.push(num);
+                }
+            }
+            lotto.sort((a, b) => a - b);
+
+            var lottoNumbersDiv = document.getElementById('lottoNumbers');
+            lottoNumbersDiv.innerHTML = ''; // 이전의 로또 번호들을 지우고 새로운 번호들을 생성합니다.
+
+            for (var i = 0; i < 6; i++) {
+                var ball = document.createElement('div');
+                ball.className = 'ball ball' + (i + 1);
+                ball.textContent = lotto[i];
+                lottoNumbersDiv.appendChild(ball);
+            }
         }
-    }
-    lotto.sort((a, b) => a - b);
-
-    var lottoNumbersDiv = document.getElementById('lottoNumbers');
-    lottoNumbersDiv.innerHTML = ''; // 이전의 로또 번호들을 지우고 새로운 번호들을 생성합니다.
-
-    for (var i = 0; i < 6; i++) {
-        var ball = document.createElement('div');
-        ball.className = 'ball ball' + (i + 1);
-        ball.textContent = lotto[i];
-        lottoNumbersDiv.appendChild(ball);
-    }
-}
-
     </script>
 </body>
 </html>
