@@ -104,7 +104,7 @@ header button {
 }
 
 main {
-    padding: 26px 24px 25px 26px;
+    padding: 26px 24px 15px 26px;
 }
 
 section {
@@ -166,8 +166,7 @@ span.join {
 p.section-line {
     position: relative;
     text-align: center;
-    padding-bottom: 23px;
-
+    padding-bottom: 20px;
 }
 
 p.section-line::before {
