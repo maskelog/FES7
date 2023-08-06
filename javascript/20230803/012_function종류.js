@@ -107,3 +107,67 @@ function two() { // 카메라
 }
 one()
 two()
+
+let a = 10; // 전역변수
+function test() {
+    let a = 100
+    return a
+}
+test()
+console.log(a) // 100
+
+let a = 10;
+function test() {
+    let a = 100
+    function test2() {
+        a = 1000
+    }
+    test2()
+    console.log(a) // 1000
+}
+test()
+console.log(a) // 10
+
+// 지역변수는 서로 간섭하지 않습니다.
+function test1() {
+    let x = 100
+}
+
+function test2() {
+    // 이렇게 하면 window에 등록이 되어 버립니다.
+    // let이나 const, var 키워드를 꼭 써주세요.
+    x = 100
+}
+
+test1()
+test2()
+console.log(x)
+console.log(window.x)
+
+let battery = 100; // 전역변수
+function 메모장() {
+    battery += 100
+    return b
+}
+
+function 사진() {
+    battery -= 1
+    return b
+}
+
+//순수함수
+function add(a, b, c) {
+    return a + b + c
+}
+add(1,2,3)
+
+// 순수함수 x
+function add(a, b) {
+    return a + b + c
+}
+add(1,2)
+
+test()
+
+// 순수함수
+// 내부의 변수가 외부의 변수에 의해 영향이 없이 항상 동일값이 나와야함
