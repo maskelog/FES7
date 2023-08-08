@@ -139,8 +139,9 @@ form {
 
 #user-id,
 #user-pw {
+    box-sizing: border-box;
     display: inline-block;
-    width: 472px;
+    width: 100%;
     height: 50px;
     margin-bottom: 14px;
     border: 1px solid #c4c4c4;
