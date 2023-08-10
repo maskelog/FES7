@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title></title>
+</head>
+
+<body>
+  <script>
+    // 전달받은 객체의 키와 벨류값을 모두 출력하는 for문을 만들어보세요.
+    const person = {
+      name: '길동',
+      age: 20,
+      gender: 'male'
+    };
+
+    // for (const key in person) {
+    //     console.log(`Key: ${key}, Value: ${person[key]}`);
+    //   }
+
+    const props = Object.keys(person);
+
+    for (let i = 0; i < props.length; i++) {
+      console.log(`key: ${props[i]}, value: ${person[props[i]]}`);
+    }
+  </script>
+</body>
+
+</html>
