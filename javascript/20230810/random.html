@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>random numbers</title>
+</head>
+
+<body>
+    <script>
+        //Math.random(); // 0 ~ 0.999999... 사이의 실수
+
+        //Math.random() * 10; // 0 ~ 9.999999...
+
+        //Math.random() * 10 + 2; // 2 ~ 11.999999...
+
+        //Math.random() * 8 + 2; // 2 ~ 9.999999...
+
+        //parseInt(Math.random * 8 + 2); // 정수로 나옴
+
+        // const selectedNumbers = [];
+
+        // while (selectedNumbers.length < 6) {
+        //     const randomNum = parseInt(Math.random() * 45 + 1);
+
+        //     if (selectedNumbers.indexOf(randomNum) === -1) {
+        //         selectedNumbers.push(randomNum);
+        //     }
+        // }
+        // console.log(selectedNumbers);
+
+        function lottoGenerater() {
+            const lottArr = [];
+
+            while(lottArr.length < 6){
+                const result = parseInt(Math.random() * 45 + 1);
+                //  1 ~ 44.999999
+                if(!lottArr.includes(result)){
+                    lottArr.push(result);
+                }
+            }
+            return lottArr;
+        }
+        
+        console.log(lottoGenerater());
+    </script>
+</body>
+
+</html>
