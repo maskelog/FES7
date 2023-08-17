@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 생성자 함수 특징
+        // 일반 함수와 구분하기 위해 생성자 함수 이름 첫 글자는 대문자로 시작
+        // 반드시 'new' 연산자를 붙여 실행해야한다. new 연산자는 생성자 함수의 this가 인스턴스를 바라보도록 만들어주는 역활
+
+        let book = {
+            책이름: '알잘딱깔센 JavaScript 비동기 프로그래밍 - 비동기 너 내 동기가 돼라',
+            책가격: 0,
+            저자: ['구나영', '김경림'],
+            출판일: '2022.08.12'
+        }
+        // 책이 100권이라면?
+
+
+        function Book(책이름, 책가격, 저자, 출판일) {
+            this.책이름 = 책이름
+            this.책가격 = 책가격
+            this.저자 = 저자
+            this.출판일 = 출판일
+        }
+
+    </script>
+</body>
+
+</html>

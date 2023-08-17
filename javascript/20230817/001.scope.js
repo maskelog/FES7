@@ -7,3 +7,4 @@ const func1 = function(){
 
 var a = 20;
 func1();
+

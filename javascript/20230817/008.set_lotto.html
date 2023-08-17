@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function lottoGenerater() {
+            // const lottArr = [];
+            const lottoSet = new Set();
+            // while (lottArr.length < 6) {
+            while (lottArr.size < 6) {
+                
+                //  1 ~ 44.999999
+                const result = parseInt(Math.random() * 45 + 1);
+                
+                // if (!lottArr.includes(result)) {
+                //     lottArr.push(result);
+                // }
+                // set 은 중복 안됨 중복검사 필요 없음
+                lottoSet.add(result)
+            }
+            // return lottArr;
+            return lottoSet
+        }
+    </script>
+</body>
+
+</html>
