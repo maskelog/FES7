@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>changeColor</title>
+    <style>
+        body {
+            display: grid;
+            justify-content: center;
+
+        }
+
+        #box {
+            width: 500px;
+            height: 500px;
+            background-color: black;
+        }
+
+        ul {
+            display: inline-flex;
+            justify-content: center;
+        }
+
+        li {
+            margin: 30px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="box"></div>
+    <ul>
+        <li><button onclick="changeColor('red')">빨강</button></li>
+        <li><button onclick="changeColor('yellow')">노랑</button></li>
+        <li><button onclick="changeColor('green')">초록</button></li>
+    </ul>
+    <script>
+        function changeColor(color) {
+            const box = document.getElementById('box');
+            box.style.backgroundColor = color;
+        }
+    </script>
+
+</body>
+
+</html>
