@@ -55,6 +55,106 @@
 //   default:
 //     alert('계산 결과가 이상하네요.');
 // }
+
+// 매개변수랑 리턴값
+// function getFee(파라미터) {
+//     return 파라미터 ? '$2.00' : '$10.00' //  파라미터 값은 아직 모름
+// }
+// getFee받아서 사용하는값
+// return은 값을 받아서 반환
+// gietFee(true)
+// 파라미터에 true가 들어가게 되면 true는 아규먼트
+
+// if 문
+// function getFee(파라미터) {
+//     if (파라미터){
+//         return '$2.00';
+//     }
+//     else {
+//         return '$10.00'
+//     }
+// }
+
+// console.log(getFee(true))// => 
+
+
+// function checkNum(num){
+//     for (let index = 0; index < 100; index++) {
+//         console.log(index)
+//         if(num==index){
+//             console.log("범위안에 값이 있습니다.")
+//             return "빨리끝남"; // 값은 종료도 시키지만 함수 종료시에 사용함
+//         }
+//     }
+//     return "아 끝났다"
+// }
+
+// console.log(checkNum(30))
+
+// 구조분해할당
+// const arr = [1,2,3]
+// console.log( arr)
+// const [a,b,c] = arr
+// console.log(a,b,c,"구조분해할당")
+// console.log(a,b,c)
+
+// var o = {age: 42, name: "hello"};
+// var {age, name} = o;
+
+// console.log(age)
+// console.log(name)
+
+    // const arr = [1,2,3]
+    // const [a,c,b] = arr;
+
+    // console.log(a,b,c)
+
+    // var o = { p: 42, q: true };
+    var o = { age: 42, name: "hello" };
+    // 구조분해할당할때 {원래키값:내가쓸변수명,원래키값:내가쓸변수명}
+    var { name:이름, age:나이 } = o;
+
+    console.log(나이); // 42
+    console.log(이름); // true
+// 키 값으로 찾기 때문에 순서 상관이 없음
+
+// 조건 (삼항)연산자
+// function getFee(isMember) {
+//   return isMember ? '$2.00' : '$10.00';
+// }
+
+// console.log(getFee(true));
+// // Expected output: "$2.00"
+
+// console.log(getFee(false));
+// // Expected output: "$10.00"
+
+// console.log(getFee(null));
+// Expected output: "$10.00"
+
+// 클로저
+// 코드 블럭을 가두고 혼자 쓰기위해 가져감
+// 클로저 ->  격리된 환경
+
+function 함수를만드는함수(x) {
+    function 함수() {
+        console.log(x)
+    }
+    return (함수)
+}
+
+const 함수를만드는함수를통해만든함수 = 함수만드는함수 (3)
+함수를만드는함수를통해 만든 함수()
+
+// 클로저함수는 상태를 기억
+
+// 화살표 함수 
+const 함수명 = (파라미터) => {
+    return 파라미터*2;
+}
+const 함수명2 = (파라미터) => 파라미터*2
+
+console.log([1,2,3,4,5].map((파라미터)=>파라미터*2))
 </script>
 </body>
 </html>
