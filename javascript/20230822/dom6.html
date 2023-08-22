@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+</head>
+<body>
+    <form action="">
+        <button type="submit" class="submit">제출</button>
+    </form>
+
+    <script>
+        const myForm = document.querySelector('form');
+        myForm.addEventListener('submit', () => {
+        
+        // 기본 기능을 막습니다.
+        event.preventDefault()
+        console.log('submit');
+        
+        // 이벤트 흐름을 막음
+        event.stopPropagation();
+        });
+
+        // 캡쳐링 이벤트로 만들면 버블링 이벤트에서 전파를 막아도 소용없음
+        document.body.addEventListener('click', () =>{
+            console.log('event still alive!!');
+        }, true);
+        //  버블링
+    </script>
+</body>
+</html>
