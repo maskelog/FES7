@@ -10,52 +10,27 @@
 
 <body>
     <script>
-        // class Robot {
-        //     constructor(name) {
-        //         this.myName = name;
-        //     }
-
-        //     sayYouName() {
-        //         console.log(`제 이름은 ${this.myName} 입니다 삐리비리리비리`);
-        //     }
-        // }
-
-
-        // class BabyRobot extends Robot {
-        //     constructor(name) {
-        //     //     super(name).sayYouName()
-        //     // }
-        //     sayBabyName() {
-        //         this.sayYouName();
-        //     }
-        // }}
-
-        // const BabyRobot = new BabyRobot('소울')
-
-        class Sausage {
-            constructor(taste1, taste2) {
-                this.taste1 = taste1;
-                this.taste2 = taste2;
+        class Robot {
+            constructor(name) {
+                this.myName = name;
             }
 
-            taste() {
-                console.log(`${this.taste1}와 ${this.taste2} 맛이 난다!`);
+            sayYouName() {
+                console.log(`제 이름은 ${this.myName} 입니다 삐리비리리비리`);
             }
         }
 
-        class FireSausage extends Sausage {
-            taste() {
-                super.taste();
-                console.log('불맛이 나기 시작한다!');
+
+        class BabyRobot extends Robot {
+            constructor(name) {
+            //     super(name).sayYouName()
+            // }
+            sayBabyName() {
+                this.sayYouName();
             }
-        }
+        }}
 
-        const mySausage = new Sausage('소고기', '파');
-        mySausage.taste(); // "소고기와 파 맛이 난다!" 출력
-
-        const spicySausage = new FireSausage('소고기', '파');
-        spicySausage.taste(); // "소고기와 파 맛이 난다!"와 "불맛이 나기 시작한다!" 순서대로 출력
-
+        const BabyRobot = new BabyRobot('소울')
     </script>
 </body>
 
