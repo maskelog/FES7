@@ -46,19 +46,29 @@ $font-sizes-test: (
 
 // 1. lists
 // 0부터 시작하지 않습니다.
-.title {
+.title_list1 {
     font-size: nth($sizes, 1);
 }
 
-.title2 {
+.title_list2 {
     font-size: nth($sizes, -1);
 }
 
+// 이 문법은 자주 사용하지 않습니다.
+.title_list3 {
+    font-size: nth($list: $sizes, $n: 2);
+}
+
 // 2. maps
-.title3 {
+.title_map1 {
     font-size: map-get($font-sizes, "h1");
 }
 
-.title4 {
+.title_map2 {
     color: map-get($font-sizes-test, "three");
+}
+
+// 이 문법은 자주 사용하지 않습니다.
+.title_map3 {
+    color: map-get($map: $font-sizes, $key: "h1");
 }
