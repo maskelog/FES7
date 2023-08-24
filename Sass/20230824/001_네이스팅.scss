@@ -1,0 +1,10 @@
+// .one > .two > .three class 작성
+.one {
+    color: red;
+    .two {
+        color: green;
+        .three {
+            color: blue;
+        }
+    }
+}

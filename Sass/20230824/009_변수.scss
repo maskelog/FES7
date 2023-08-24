@@ -1,0 +1,14 @@
+$nana1: #000;
+$nana2: #fff;
+// 한글 변수 권장하지 않음.
+$큰글자: 32px;
+
+.one {
+    font-size: $큰글자;
+}
+.two {
+    font-size: $큰글자;
+}
+.three {
+    font-size: $큰글자;
+}
