@@ -22,7 +22,7 @@ db.once("open",() => {
 });
 
 mongoose.connect(
-  `mongodb+srv://blitzmaske:${dbConfig.pw}@first-project.7h2u9qp.mongodb.net/?retryWrites=true&w=majority`, {useNewUrlParser: true, useUnifiedTopology: true}
+  `mongodb+srv://blitzmaske:${dbConfig.pw}@first-project.7h2u9qp.mongodb.net/?retryWrites=true&w=majority`, {useNewUrlParser: true, useUnifiedTopology: true,}
 );
 
 var port = normalizePort(process.env.PORT || '3000');
