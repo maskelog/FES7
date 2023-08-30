@@ -1,8 +1,3 @@
-// function removeview(){
-//   const view = document.querySelector('.view-frame');
-//   view.remove();
-// }
-
 const viewFrame = document.querySelector(".view-frame");
 const imgList = document.querySelectorAll(".img-container img");
 
