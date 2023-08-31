@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title></title>
+</head>
+<style>
+  img {
+    max-width: 100%;
+  }
+</style>
+
+<body>
+  <main id="main"></main>
+  <!-- <div id="container"></div> -->
+
+  <script>
+    // const container = document.getElementById('container');
+    // let content = '';
+
+    // for (let i = 0; i < 10; i++) {
+    //     content += `
+    //     <article class="parent">
+    //         <figure>
+    //             <img class="figImg" src="https://cdn.spotvnews.co.kr/news/photo/202308/628836_903835_551.jpg">
+    //             <figcaption class="figCap">
+    //                 2023.09.13일 개봉!
+    //             </figcaption>
+    //         </figure>
+    //     </article>
+    //     `;
+    // }
+    // container.innerHTML = content;
+    
+    const main = document.querySelector('main');
+    const fragment = new DocumentFragment();
+
+    for (let i = 0; i < 10; i++) {
+      const article = document.createElement('article');
+      article.innerHTML = `<figure>
+                <img class="figImg" src="https://cdn.spotvnews.co.kr/news/photo/202308/628836_903835_551.jpg">
+                <figcaption class="figCap">
+                    2023.09.13일 CGV 단독 개봉!
+                </figcaption>
+                </figure>`
+      // main.appendChild(article);
+      fragment.appendChild(article)
+    }
+
+    // main.appendChild(fragment);
+    main.appendChild(fragment.cloneNode(true));
+    main.appendChild(fragment.cloneNode(true));
+    main.appendChild(fragment.cloneNode(true));
+    </script>
+
+</body>
+
+</html>
