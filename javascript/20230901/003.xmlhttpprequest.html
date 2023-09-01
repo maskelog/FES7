@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <div id="output"></div>
+  <button class="btn">통신 시작!</button>
+  <script>
+    const btn = document.querySelector('.btn');
+    const outputDiv = document.getElementById('output');
+
+    btn.addEventListener('click', () => {
+      const xhrObj = new XMLHttpRequest();
+      xhrObj.open('GET', 'message.txt');
+
+      xhrObj.onreadystatechange = () => {
+        if (xhrObj.readyState === 4 && xhrObj.status === 200) {
+          const result = xhrObj.responseText;
+          outputDiv.textContent = result;
+        }
+      };
+
+      xhrObj.send();
+    });
+  </script>
+</body>
+
+</html>
