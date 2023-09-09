@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Canvase</title>
+    <style>
+      #canvas {
+        border: 1px solid black;
+      }
+    </style>
+</head>
+<body>
+    <canvas id="canvas" width="400" height="200"></canvas>
+
+    <script>
+    const canvas = document.getElementById("canvas");
+      
+
+      // canvas 요소의 drawing context 객체를 가져옵니다. 그림을 그리는데 필요한 방법 제공하는 객체
+      const ctx = canvas.getContext("2d");
+
+
+      // 사각형 그리기 (x, y, 너비, 높이)
+      ctx.fillRect(0, 0, 30, 100);
+      ctx.fillRect(0, 70, 80, 30);
+
+      // I
+      ctx.fillRect(100, 0, 30, 100);
+
+      // N
+      ctx.fillRect(270, 0, 30, 100);
+      ctx.fillRect(338, 0, 30, 100);
+            // 새로운 서늘 그릴것을 알림
+            ctx.beginPath();
+      // 선의 색상
+      ctx.strokeStyle = 'black';
+      // 선의 두께
+      ctx.lineWidth = 30;
+      // 선의 시작 지점
+      ctx.moveTo(290, 0);
+      // 선의 끝
+      ctx.lineTo(350, 90);
+      // 화면에 선을 그린다.
+      ctx.stroke();
+
+
+
+      // 원그리기
+      ctx.beginPath();
+      // 태두리 표시
+      ctx.strokeStyle = "black";
+      ctx.lineWidth = 25;
+      // 원을 그리는 메소드
+      // 원의 중심의 X 축, Y축, 반지름 길이, 시작 각도, 종료 각도. 라디안 사용
+      ctx.arc(200, 53, 40, 0, 2 * Math.PI);
+      ctx.stroke();
+
+    </script>
+</body>
+</html>
