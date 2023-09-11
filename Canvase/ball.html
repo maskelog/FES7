@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>공 튀기기</title>
+</head>
+<body>
+<canvas id="myCanvas" width="800" height="600" style="border:1px solid;"></canvas>
+<script>
+    class Ball {
+        constructor(x, y, radius, speedX, speedY, color, ctx) {
+            this.x = x;
+            this.y = y;
+            this.radius = radius;
+            this.speedX = speedX;
+            this.speedY = speedY;
+            this.color = color;
+            this.ctx = ctx;
+        }
+
+        draw() {
+            this.ctx.beginPath();
+            this.ctx.arc(this.x, this.y, this.radius, 0, 2 * Math.PI);
+            this.ctx.fillStyle = this.color;
+            this.ctx.fill();
+        }
+
+        move(canvasWidth, canvasHeight) {
+            this.x += this.speedX;
+            this.y += this.speedY;
+
+            if (this.x + this.radius > canvasWidth || this.x - this.radius < 0) {
+                this.speedX = -this.speedX;
+            }
+
+            if (this.y + this.radius > canvasHeight || this.y - this.radius < 0) {
+                this.speedY = -this.speedY;
+            }
+        }
+    }
+
+    const canvas = document.getElementById('myCanvas');
+    const ctx = canvas.getContext('2d');
+
+    // 공들을 저장하는 배열
+    const balls = [
+        new Ball(200, 150, 30, 4, 4, 'blue', ctx),
+        new Ball(200, 150, 30, 2, 5, 'red', ctx),
+        new Ball(200, 150, 30, 3, 8, 'green', ctx),
+    ];
+
+    function animate() {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+        // 모든 공을 움직이고 그립니다.
+        for(let ball of balls) {
+            ball.draw();
+            ball.move(canvas.width, canvas.height);
+        }
+
+        requestAnimationFrame(animate);
+    }
+
+    animate();
+</script>
+</body>
+</html>
