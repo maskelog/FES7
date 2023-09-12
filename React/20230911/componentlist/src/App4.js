@@ -1,28 +1,22 @@
 import React, { useState } from 'react';
 import Login from './Components/Login';
 import Homepage from './Components/Homepage';
+import Modal from './Components/Modal';
 
-function App() {
-  const user = {
-    idUser: 'jaehyun@weniv.com',
-    pwUser: '1234',
-  };
-
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
-
-  const handleLogin = (id, pw) => {
-    if (id === user.idUser && pw === user.pwUser) {
-      setIsLoggedIn(true);
-    } else {
-      alert("로그인 정보가 잘못되었습니다.");
+export default function App4() {
+    const user = {
+        idUser: 'jaehyun@weniv.com',
+        pwUser: 1234
     }
-  };
 
-  return (
-    <div>
-      {isLoggedIn ? <Homepage /> : <Login onLogin={handleLogin} />}
-    </div>
-  );
+    // 로그인 상태를 판단하는 state
+    const [login, setLogin] = useState(false);
+    const [modalShow, setModalShow] = useState(true);
+
+    return (
+        <>
+            {login ? <Homepage setLogin={setLogin} /> : <Login infoUser={user} setLogin={setLogin} />}
+            {modalShow && <Modal setModalShow={setModalShow} />}
+        </>
+    )
 }
-
-export default App;
