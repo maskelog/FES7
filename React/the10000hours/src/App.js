@@ -1,13 +1,17 @@
-import React from 'react';
-import Main from './Components/Main/Main';
-import Modal from './Components/Modal/Modal';
-import GlobalStyle from "./style/style.js";
+import Header from "./header";
+import Intro from "./Intro";
+import Main from "./main"
+import Footer from "./footer"
+import GlobalStyle from "./style.js";
 
 function App() {
   return (
-    <div className="App">
+    <>
+      <Header />
+      <Intro />
       <Main />
-    </div>
+      <Footer />
+    </>
   );
 }
 
