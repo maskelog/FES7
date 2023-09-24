@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #calendar {
+            display: inline-block;
+            padding: 20px;
+            background: #333;
+            text-align: center;
+            color: #fff;
+        }
+
+        #calendar table {
+            border-collapse: collapse;
+        }
+
+        caption {
+            font-size: 25px;
+            color: orange;
+            margin: 10px;
+        }
+
+        th,
+        td {
+            padding: 20px;
+            border: 1px solid #666;
+        }
+
+        th:first-child,
+        td:first-child {
+            color: red;
+        }
+
+        .prev,
+        .next {
+            color: inherit;
+            padding: 10px;
+            margin: 5px;
+            background-color: #333;
+        }
+    </style>
+</head>
+
+<body>
+    <article id="calendar">
+        <h2>나의 멋진 HTML 달력</h2>
+        <table>
+            <caption>
+                <time datetime="2022-11">
+                    <span class="year"></span>년
+                    <span class="month"></span>월
+                </time>
+            </caption>
+            <tr>
+                <th scope="col">일</th>
+                <th scope="col">월</th>
+                <th scope="col">화</th>
+                <th scope="col">수</th>
+                <th scope="col">목</th>
+                <th scope="col">금</th>
+                <th scope="col">토</th>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+        </table>
+
+        <button type="button" class="prev">이전달</button>
+        <button type="button" class="next">다음달</button>
+    </article>
+
+    <script>
+        class Calendar {
+    constructor() {
+        this.year = new Date().getFullYear();
+        this.month = new Date().getMonth() + 1;
+        this.captionYear = document.querySelector('.year');
+        this.captionMonth = document.querySelector('.month');
+        this.days = document.querySelectorAll('tr td');
+        this.init();
+    }
+
+    init() {
+        this.render();
+        this.addEventListeners();
+    }
+
+    render(newYear = this.year, newMonth = this.month) {
+        const time = new Date(newYear, newMonth - 1);
+        const dayLength = new Date(newYear, newMonth, 0).getDate();
+
+        let date = time.getDate();
+        let day = time.getDay();
+
+        for (let i = 0; i < this.days.length; i++) {
+            this.days[i].textContent = '';
+        }
+
+        for (let i = day; i < day + dayLength; i++) {
+            this.days[i].textContent = date++;
+        }
+
+        this.captionYear.textContent = newYear;
+        this.captionMonth.textContent = newMonth;
+    }
+
+    addEventListeners() {
+        const btns = document.querySelectorAll('button');
+        btns.forEach((item) => {
+            item.addEventListener('click', () => {
+                if (item.classList.contains('prev')) {
+                    this.month--;
+                    if (this.month === 0) {
+                        this.month = 12;
+                        this.year--;
+                    }
+                } else {
+                    this.month++;
+                    if (this.month === 13) {
+                        this.month = 1;
+                        this.year++;
+                    }
+                }
+                this.render(this.year, this.month);
+            });
+        });
+    }
+}
+
+const calendar = new Calendar();
+    </script>
+</body>
+
+</html>
